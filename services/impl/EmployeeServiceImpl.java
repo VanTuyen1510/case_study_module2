@@ -14,8 +14,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 //  public Employee(int id, String name, String birthday, String gender, int CMND, int phone, String email, String level, String location) {
 //        super(id, name, birthday, gender, CMND, phone, email);
     static {
-        Employee employee1 = new Employee(1,"Minh","nam","09/05/1997",012,105,"minh@gmail.com","Trung Cấp","Lễ Tân");
-        Employee employee2 = new Employee(2,"Hằng","nữ","09/04/1997",016,202,"hang@gmail.com","Đại Học","Quản lý");
+        Employee employee1 = new Employee(1,"Minh","nam","09/05/1997",1000000000,105,"minh@gmail.com","Trung Cấp","Lễ Tân",10000000);
+        Employee employee2 = new Employee(2,"Hằng","nữ","09/04/1997",200000000,202,"hang@gmail.com","Đại Học","Quản lý",200000000);
         employees.add(employee1);
         employees.add(employee2);
     }

@@ -87,7 +87,8 @@ public class MyUtil {
            System.out.println("5.Bạn muốn sửa email");
            System.out.println("6.Bạn muốn sửa trình độ");
            System.out.println("7.Bạn muốn sửa vị trí");
-           System.out.println("8.Finish");
+           System.out.println("8.Bạn muốn sửa lương");
+           System.out.println("9.Finish");
 
            System.out.println("Mời bạn chọn:");
            select = Integer.parseInt(scanner.nextLine());
@@ -129,12 +130,17 @@ public class MyUtil {
                    employee.setLocation(location);
                    break;
                case 8:
+                   System.out.println("Mời bạn sửa lương");
+                   long wage = Long.parseLong(scanner.nextLine());
+                   employee.setWage(wage);
+                   break;
+               case 9:
                    break;
 
 
            }
 
-       }while (select < 8);
+       }while (select < 9);
     }
 
     public static boolean checkId(int id , List<Integer> ids){
@@ -225,7 +231,7 @@ public class MyUtil {
         }while (select < 8);
     }
 
-    public static boolean checkCmnd(int cmnd,List<Integer> cmnds){
+    public static boolean checkCmnd(int cmnd,List<Long> cmnds){
         return cmnds.contains(cmnd);
     }
 

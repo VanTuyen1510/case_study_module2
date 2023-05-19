@@ -23,7 +23,7 @@ public class FuramaController {
 
     private static ICustomerService customerService = new CustomerServiceImpl();
     private static List<Customer> customers = customerService.displayPerson();
-    private static List<Integer> customerIds = new LinkedList<>();
+    private static List<Long> customerIds = new LinkedList<>();
 
 
     public static void main(String[] args) {
@@ -83,6 +83,7 @@ public class FuramaController {
             System.out.println("2.Add new employees");
             System.out.println("3.Edit employee");
             System.out.println("4.Remove employee");
+            System.out.println("5.Return main menu");
 
             System.out.println("Mời bạn chọn chức năng");
             select = Integer.parseInt(scanner.nextLine());
@@ -116,7 +117,9 @@ public class FuramaController {
                     String level = MyUtil.level();
                     System.out.println("Add new employee location");
                     String location = MyUtil.location();
-                    Employee employee = new Employee(id, name, birthday, gender, cmnd, phone, email, level, location);
+                    System.out.println("Add new employee wage");
+                    long wage = Long.parseLong(scanner.nextLine());
+                    Employee employee = new Employee(id, name, birthday, gender, cmnd, phone, email, level, location,wage);
                     employeeService.addPerson(employee);
                     break;
                 case 3:
@@ -128,8 +131,10 @@ public class FuramaController {
                     int idDelete = Integer.parseInt(scanner.nextLine());
                     employeeService.removePerson(idDelete);
                     break;
+                case 5:
+                    break;
             }
-        } while (select < 4);
+        } while (select < 5);
     }
 
     private static void editEmployee() {
@@ -155,6 +160,7 @@ public class FuramaController {
             System.out.println("2.Add new customers");
             System.out.println("3.Edit customer");
             System.out.println("4.Remove customer");
+            System.out.println("5.Return main menu");
 
             System.out.println("Mời bạn chọn chức năng");
             select = Integer.parseInt(scanner.nextLine());
@@ -188,6 +194,7 @@ public class FuramaController {
                     System.out.println("Add new customer address:");
                     String address = scanner.nextLine();
 
+
                     Customer customer = new Customer(id,name,birthday,gender,cmnd,phone,email,typeOfGuest,address);
                     customerService.addPerson(customer);
                     break;
@@ -197,6 +204,8 @@ public class FuramaController {
                     System.out.println("Mời bạn nhập name để xóa");
                     String nameRemove = scanner.nextLine();
                     customerService.removePerson(nameRemove);
+                    break;
+                case 5:
                     break;
             }
         } while (true);

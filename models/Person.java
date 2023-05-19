@@ -11,7 +11,7 @@ public abstract class Person {
 
     private String gender;
 
-    private int CMND;
+    private long CMND;
 
     private int phone;
 
@@ -20,7 +20,7 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(int id, String name, String birthday, String gender, int CMND, int phone, String email) {
+    public Person(int id, String name, String birthday, String gender, long CMND, int phone, String email) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -62,11 +62,11 @@ public abstract class Person {
         this.birthday = birthday;
     }
 
-    public int getCMND() {
+    public long getCMND() {
         return CMND;
     }
 
-    public void setCMND(int CMND) {
+    public void setCMND(long CMND) {
         this.CMND = CMND;
     }
 
